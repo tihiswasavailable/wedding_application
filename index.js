@@ -62,6 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
     sharePicBtn.addEventListener('click', (e) => {
         e.preventDefault(); // Prevent default link behavior
         // Replace YOUR_GOOGLE_FORM_UPLOAD_LINK_HERE with the public link to your Google Form for file uploads
-        window.open('https://drive.google.com/drive/folders/1HTytIG-wfYVoPE6g6FJKnXC_1p1z2vpy?usp=sharing', '_blank');
+        window.open('https://docs.google.com/forms/d/e/1FAIpQLSekLueIVQXSryNkCWQ-JZjLoWan2f3J0X87oPcSTlx59_NSTA/viewform?usp=dialog', '_blank');
     });
 });
