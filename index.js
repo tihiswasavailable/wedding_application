@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     seatingPlanBtn.addEventListener('click', (e) => {
         e.preventDefault(); // Prevent default link behavior
         // Replace YOUR_GOOGLE_DRIVE_PDF_SHARE_LINK_HERE with your actual Google Drive shareable link for the PDF
-        window.open('https://drive.google.com/file/d/1_b80BPl6hFFyn7Qmq2UhwjbR8aKl80VD/view?usp=drive_link', '_blank'); 
+        window.open('https://drive.google.com/file/d/1_b80BPl6hFFyn7Qmq2UhwjbR8aKl80VD/view?usp=sharing', '_blank'); 
     });
 
     sharePicBtn.addEventListener('click', (e) => {
