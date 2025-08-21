@@ -3,12 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding Application</title>
+    <title>Our Wedding Day</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <h1>Welcome to Our Wedding!</h1>
-    <p>More content coming soon...</p>
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="sr">SR</button>
+    </div>
+
+    <header>
+        <h1 data-lang-key="couple_names">Vanja & Stefan</h1>
+        <p class="date" data-lang-key="wedding_date">13.09.2025</p>
+    </header>
+
+    <main class="button-container">
+        <div class="button-card">
+            <a href="#" class="square-button" id="seating-plan-btn">
+                <div class="button-content">
+                    <i class="fas fa-map-marked-alt button-icon"></i>
+                    <span class="button-text" data-lang-key="seating_plan">Seating Plan  🪑</span>
+                </div>
+            </a>
+        </div>
+        <div class="button-card">
+            <a href="#" class="square-button" id="share-pic-btn">
+                <div class="button-content">
+                    <i class="fas fa-cloud-upload-alt button-icon"></i>
+                    <span class="button-text" data-lang-key="share_pic">Share Your Pic  📸</span>
+                </div>
+            </a>
+        </div>
+    </main>
+
     <script src="index.js"></script>
 </body>
 </html>

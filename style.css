@@ -1,19 +1,168 @@
-/* Basic Mobile-First Styles */
+/* Modern Minimalist Mobile-First Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --primary-color: #A0522D; /* Sienna - a warm, elegant brown */
+    --secondary-color: #F8F8F8; /* Off-white */
+    --text-color: #333333;
+    --light-grey: #E0E0E0;
+    --accent-color: #D2B48C; /* Tan - for subtle accents */
+}
+
+/* Global body adjustments for full screen fit */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
-    padding: 20px;
-    background-color: #f4f4f4;
-    color: #333;
+    padding: 0;
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--light-grey) 100%);
+    color: var(--text-color);
+    min-height: 100vh; /* Allow content to extend beyond viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: auto; /* Allow vertical scrolling */
+    box-sizing: border-box;
+    padding-top: clamp(20px, 5vh, 40px);
+    padding-bottom: clamp(20px, 5vh, 40px);
+}
+
+header {
+    text-align: center;
+    margin-bottom: clamp(15px, 5vh, 30px); /* Tighter margin for header */
+    color: var(--primary-color);
+    padding: 0 10px;
+    flex-shrink: 0;
+    min-height: 0; /* Allow header to shrink vertically as much as possible */
+    /* margin-top: 60px; Remove if not needed after overall spacing fix */
 }
 
 h1 {
-    color: #8B0000; /* Dark Red */
-    text-align: center;
+    font-size: clamp(2.5em, 9vw, 4em); /* Slightly larger, more elegant */
+    font-weight: 600;
+    margin-bottom: 5px;
+    letter-spacing: 1px; /* Reduced letter spacing for Poppins */
+    text-shadow: none; /* Remove subtle shadow */
 }
 
-p {
-    text-align: center;
+p.date {
+    font-size: clamp(1.2em, 5vw, 1.6em); /* Increased font size for date */
+    font-weight: 400;
+    font-style: normal; /* Remove italic */
+    color: var(--text-color);
+    opacity: 0.9;
+    letter-spacing: 0.5px;
 }
 
-/* Media queries for larger screens could go here if needed, but for mobile-first we start with mobile styles */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 5vh, 40px); /* Increased gap for better spacing */
+    width: 90%;
+    max-width: 280px; /* Further reduced max-width for container */
+    padding-bottom: 0;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    min-height: 0; /* Allow button container to shrink vertically as much as possible */
+}
+
+.button-card {
+    flex-shrink: 1; /* Allow buttons to shrink */
+    width: 100%;
+    max-width: 250px; /* Further reduced max-width for individual button card */
+    aspect-ratio: 1 / 1; /* Ensure perfect square */
+    background-color: #FFFFFF;
+    border-radius: 15px; /* Slightly more rounded */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* More prominent, softer shadow */
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.button-card:hover {
+    transform: translateY(-10px) scale(1.02); /* More pronounced lift and slight scale */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.square-button {
+    display: block;
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: clamp(1.1em, 4.5vw, 1.5em); /* Slightly larger text */
+    font-weight: 600;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease; /* Smooth transition for background on hover */
+}
+
+.square-button:hover {
+    background-color: rgba(var(--primary-color), 0.05); /* Very subtle tint on hover */
+}
+
+/* Ensure the button content also scales well */
+.square-button .button-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: clamp(5px, 2vw, 10px); /* Keep padding consistent */
+    box-sizing: border-box;
+}
+
+.button-icon {
+    font-size: clamp(2.2em, 8vw, 3.5em); /* Even smaller max icon size */
+    margin-bottom: clamp(8px, 2.5vw, 12px); /* Reduced margin for icon */
+    color: var(--accent-color);
+    filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.1));
+}
+
+.button-text {
+    margin-top: 0;
+    line-height: 1.2;
+    font-size: clamp(0.9em, 5vw, 1.8em); /* Even smaller button text */
+}
+
+/* Adjust language switcher if it causes overflow */
+.language-switcher {
+    position: absolute;
+    top: clamp(10px, 3vh, 20px); /* Make top position responsive */
+    right: clamp(10px, 3vw, 20px); /* Make right position responsive */
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.lang-btn {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid var(--light-grey);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.lang-btn:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+}
+
+.lang-btn.active {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    border-color: var(--primary-color);
+}
