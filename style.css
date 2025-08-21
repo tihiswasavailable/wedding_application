@@ -1,0 +1,19 @@
+/* Basic Mobile-First Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1 {
+    color: #8B0000; /* Dark Red */
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+/* Media queries for larger screens could go here if needed, but for mobile-first we start with mobile styles */
